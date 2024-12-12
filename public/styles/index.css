@@ -1,10 +1,198 @@
 body{
     background-image: url('/images/book.jpg');
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0px;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container-box{
+    width: 90%;
+    max-width: 700px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.first-row{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.first-row-row{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+.second-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img{
+    max-width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.title p{
+    margin: 0;
+    display: inline;
+    font-size: 20px;
+    font-weight: bold;
+    color: yellow;
+}
+
+
+.notes{
+    
+}
+.notes p{
+    margin: 0;
+    display: inline;
+    font-size: 14px;
+}
+
+.edit-delete-btn img{
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.btn-success{
+    border-radius: 50px !important;
+}
+
+.btn-danger{
+    border-radius: 50px !important;
+}
+
+.head{
+    font-size: 2rem; 
+    font-weight: bold;
+    text-align: center; 
 }
 
 .Website-title{
+    color: yellow;
+}
+
+.create{
+    position: fixed;
+    top: 80%;
+    right: 5%;
+}
+
+.create img{
+    width: 50px;
+    height: 50px;
+}
+
+.btn-primary{
+    border-radius: 50px !important;
+}
+
+
+.create-text{
+    font-size: 25px;
+    color: violet;
+    font-weight: bold;
+}
+
+
+
+/* body{
+    background-image: url('/images/book.jpg');
+    background-attachment: fixed;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin: 0; 
+    padding: 0; 
+    height: 5000px;
 
 }
+
+
+
+
+
+.drop{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+}
+
+.create{
+    position: fixed;
+    top: 85%;
+    right: 5%;
+}
+
+.btn-primary{
+    border-radius: 50px !important;
+    padding: 10px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    font-size: 20px !important;
+} 
+
+.create img{
+    height: 30px;
+    width: 30px;
+}
+
+.body{
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container{
+    width: 400px;
+    height: 700px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+ */

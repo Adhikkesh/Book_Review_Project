@@ -1,0 +1,71 @@
+body{
+    background-image: url('/images/book.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 5000px;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contain{
+    width: 800px;
+    height: 500px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.isbn-text{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.isbn-box{
+    
+}
+
+.rating-text{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.rating-box{
+    display: block;
+}
+
+.notes-text{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.notes-box{
+    display: block;
+}
+
+.btn{
+    position: fixed;
+    right: 5%;
+    bottom: 10%;
+}
+
+.create{
+    position: fixed;
+    top: 80%;
+    right: 5%;
+}
+
+.create img{
+    width: 50px;
+    height: 50px;
+}
