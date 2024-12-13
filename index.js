@@ -2,6 +2,9 @@ import axios from "axios";
 import bodyParser from "body-parser";
 import express from "express";
 import pg from "pg";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -9,11 +12,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 const db = new pg.Pool({
-    host: "localhost",
-    port: 5432,
-    user: "postgres",
-    password: "2006",
-    database: "BookReview"
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 });
 
 db.connect();
