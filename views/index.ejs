@@ -13,16 +13,18 @@
     </div>
 
     <div class="drop">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Rating</a>
-            <a class="dropdown-item" href="#">Recency</a>
-            <a class="dropdown-item" href="#">title</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+                </button>
+                <form action="/sort" method="POST">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item" type="submit" name="sort" value="rating">Rating</button>
+                        <button class="dropdown-item" type="submit" name="sort" value="recency">Recency</button>
+                        <button class="dropdown-item" type="submit" name="sort" value="title">title</button>
+                    </div>
+                </form>
             </div>
-        </div>
     </div>
 
 
@@ -36,7 +38,7 @@
                 <div class="first-row-row">
                     <div class="title">
                         <p><%= e.title %>- by <%= e.author %></p>
-                        <p style="color: black; font-size: 20px;display: block">Date: <%= e.date %></p>
+                        <p style="color: black; font-size: 20px;display: block">Date: <%= e.date.toISOString().split('T')[0] %></p>
                     </div>
 
                     <div class="notes">
@@ -52,11 +54,11 @@
                 </div>
                 <div class="edit-delete-btn">
                     <form action="/edit/<%= e.id %>" method="POST">
-                        <button type="submit" class="btn btn-success edit-btn" bookid = <%= e.id %>><img src="/images/edit.png"> edit</button>
+                        <button type="submit" class="btn btn-success edit-btn" bookid = <%= e.id %> style="display: block"><img src="/images/edit.png"> edit</button>
                     </form>
 
                     <form action="/delete/<%= e.id %>" method="POST">
-                        <button type="submit" class="btn btn-danger delete-btn" bookid = <%= e.id %>><img src="/images/delete.png"> delete</button>
+                        <button type="submit" class="btn btn-danger delete-btn" bookid = <%= e.id %> style="display: block"><img src="/images/delete.png"> delete</button>
                     </form>
                 </div>
             </div>

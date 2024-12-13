@@ -20,20 +20,16 @@
 
     <div class="contain">
         <form action="/create" method="POST">
-            <input name="id" value="<%= table.id %>" hidden>
-            <input name="text" value="<%= text %>" hidden>
+            <input name="id" id="id" hidden>
+            <input name="text" id="text" value="<%= text %>" hidden>
             <label name="isbn" class="isbn-text">Enter the isbn number: </label>
-            <input name="isbn" type="text" class="isbn-box" size="30" value="<%= table.isbn %>"
-             <% if(text == "Edit") { %>
-                disabled
-            <% } %>
-            >
+            <input name="isbn" id="isbn" type="text" class="isbn-box" size="30" <% if(text == "Edit") { %> disabled <% } %> value="<%= table ? table.isbn : '' %>">
 
             <label name="rating" class="rating-text">Enter your rating: </label>
-            <input name="rating" type="number" class="rating-box" min="1" max="10" size="30" value="<%= table.ratings %>">
+            <input name="rating" id="rating" type="number" class="rating-box" min="1" max="10" size="30" value="<%= table ? table.ratings : '' %>">
 
             <label name="notes" class="notes-text">Enter your Notes: </label>
-            <textarea name="notes" class="notes-box" rows="10" cols="50"><%= table.review %></textarea>
+            <textarea name="notes" id="notes" class="notes-box" rows="10" cols="50"><%= table ? table.review : '' %></textarea>
 
             <div class="create">
                 <button type="submit" class="btn btn-primary">
@@ -49,5 +45,14 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        /* document.addEventListener("DOMContentLoaded",() => {
+            if(table){
+                document.getElementById("isbn").value = table.isbn;
+                document.getElementById("rating").value = table.ratings;
+                document.getElementById("notes").value = table.review;
+            }
+        });*/
+    </script>
 </body>
 </html>
