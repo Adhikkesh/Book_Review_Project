@@ -38,26 +38,7 @@ app.get("/new",(req,res) => {
     res.render("new.ejs",{text : "create",table: null});
 });
 
-// app.post("/create",async (req,res) => {
-//     let isbn = req.body.isbn;
-//     let rating = parseInt(req.body.rating);
-//     let notes = req.body.notes;
 
-//     const response = await axios.get(`https://openlibrary.org/isbn/${isbn}`);
-//     let title = response.data.title;
-//     let link = title.split(" ").join("+");
-
-//     const response1 = await axios.get(`https://openlibrary.org/search.json?q=${link}`);
-//     let author = response1.data.docs[0].author_name[0];
-
-//     let image = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
-
-//     const currentDate = new Date();
-//     const year = currentDate.toISOString().split('T')[0]; 
-//     await db.query("insert into book (isbn,title,review,date,ratings,author) values ($1,$2,$3,$4,$5,$6)",[isbn,title,notes,year,rating,author]);
-
-//     res.redirect("/");
-// });
 
 app.post("/create", async (req, res) => {
     try {
